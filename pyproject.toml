@@ -1,10 +1,11 @@
 [project]
-name = "ai-buildcamp-project"
+name = "relational-rag"
 version = "0.1.0"
-description = "My AI Engineering Buildcamp project"
+description = "CLI natural-language interface for querying DuckDB using RAG-grounded SQL generation"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "duckdb>=1.5.2",
     "jupyter>=1.0.0",
     "minsearch>=0.0.5",
     "openai>=1.50.0",

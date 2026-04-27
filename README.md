@@ -1,14 +1,21 @@
-# Your Project Name
+# Relational RAG: Natural-Language Interface for DuckDB
 
-A starter template for the AI Engineering Buildcamp capstone. Replace this README with a description of your own project.
+A CLI tool that lets business users query a local DuckDB database in plain English — with inspectable, trustworthy results.
 
 ## The Problem
 
-Describe the problem your project solves and who has it. One or two sentences.
+With so many dashboards available, business users often struggle to find the right information quickly. Existing natural-language-to-SQL systems are unreliable and hard to trust, leaving users uncertain whether the generated query is correct.
 
 ## What It Does
 
-Describe what the AI system does and a typical interaction. What does the user provide? What does the system return?
+The user types a question in natural language (e.g. *"What were the top 5 products by revenue last quarter?"*). The system:
+
+1. Retrieves relevant schema fragments and similar past queries using RAG.
+2. Generates SQL with an LLM, grounded in that retrieved context.
+3. Executes the SQL against a local DuckDB database.
+4. Returns the query results, the generated SQL, a short plain-English explanation, and basic trust indicators (similar past queries, tables used).
+
+The success metric is higher accuracy on a small benchmark of business questions compared to a no-retrieval baseline, plus consistent and inspectable outputs that help users understand and trust the answers.
 
 ## Setup
 
